@@ -1,0 +1,30 @@
+name: 🚀 Déploiement automatique vers Hugging Face Spaces
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: 🔄 Synchronisation avec le Space
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Cloner le dépôt
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true  # Active Git LFS si nécessaire
+
+      - name: 🔐 Configurer Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 🚀 Pousser vers Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git remote add space https://mkane13:$HF_TOKEN@huggingface.co/spaces/mkane13/restaurant-QA-Chatbot
+          git push --force space main
