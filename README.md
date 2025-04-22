@@ -1,3 +1,16 @@
+---
+title: Restaurant QA Chatbot
+emoji: 🍽️
+colorFrom: blue
+colorTo: gray
+sdk: streamlit
+sdk_version: 1.44.1
+app_file: app/app.py
+pinned: false
+license: mit
+short_description: Intelligent RAG-based chatbot for restaurants
+---
+
 # 🍽️ Chatbot Restaurant Q&A
 
 Un chatbot intelligent basé sur l'approche RAG (Retrieval-Augmented Generation), conçu pour répondre automatiquement aux questions fréquentes concernant un restaurant. Il extrait les réponses directement depuis un fichier PDF structuré contenant les questions/réponses officielles.
