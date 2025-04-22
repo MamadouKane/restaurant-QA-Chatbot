@@ -1,0 +1,10 @@
+langchain==0.3.23
+langchain-ollama
+langchain-community==0.3.21
+langchain-pinecone
+streamlit==1.44.1
+python-dotenv
+pinecone
+PyPDF2
+pydantic
+ollama==0.4.8
